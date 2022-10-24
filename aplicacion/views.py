@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from aplicacion.models import Vecinos
+from aplicacion.models import Vecino
 import random
 
 def index(request):
@@ -8,13 +8,17 @@ def index(request):
 
 def crear_vecino(request, nombre, apellido): 
     
-    vecino = Vecinos (nombre = nombre, apellido = apellido, edad = random.randrange(1, 99), departamento = random.randrange(0,21))
+    vecino = Vecino (nombre = nombre, apellido = apellido, edad = random.randrange(1, 99), departamento = random.randrange(0,21))
     vecino.save()
 
     return render(request, 'aplicacion/crear_vecino.html', {'vecino': vecino})
     
 def ver_vecinos(request):
     
-    vecinos = Vecinos.objects.all()
+    vecinos = Vecino.objects.all()
     
     return render(request, 'aplicacion/ver_vecinos.html', {'vecinos': vecinos})
+
+def sobre_nosotros(request):
+    
+    return render (request, 'aplicacion/sobre_nosotros.html')

@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Nuestros vecinos:</p>
-    {% for vecino in vecinos %}
-        <li>{{vecino.nombre}} {{vecino.apellido}} cuya edad es {{vecino.edad}} y vive en el departamento numero {{vecino.departamento}}</li> 
-    {% endfor %}
-</body>
-</html>
+{% extends 'aplicacion/base.html' %}
+
+{% block mi_contenido %}
+<h2><a class="navbar-brand" href={% url 'index' %}>Index</a></h2>
+<p>Nuestros vecinos:</p>
+{% for vecino in vecinos %}
+    <li>{{vecino.nombre}} {{vecino.apellido}} cuya edad es {{vecino.edad}} y vive en el departamento {{vecino.departamento}}</li> 
+{% endfor %}
+{% endblock mi_contenido %}
+
