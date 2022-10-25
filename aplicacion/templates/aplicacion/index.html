@@ -1,19 +1,33 @@
 {% extends 'aplicacion/base.html' %}
 
+{% block title_pagina %}
+Inicio
+{% endblock title_pagina %}
+
 {% block mi_contenido %}
-<!-- Masthead-->
-<header class="masthead">
-    <div class="container position-relative">
-        <div class="row justify-content-center">
-            <div class="col-xl-6">
-                <div class="text-center text-white">
-                    <!-- Page heading-->
-                    <h1 class="mb-5"> Enterate mas de nuestros vecinos en este blog!</h1>
+    {% block mi_header %}
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container position-relative">
+            <div class="row justify-content-center">
+                <div class="col-xl-6">
+                    <div class="text-center text-white">
+                        <!-- Page heading-->
+                        <h1 class="mb-5">
+                            {% block h1_texto_header %}
+                            ¡Enterate mas de nuestros vecinos en este blog!
+                            {% endblock h1_texto_header %}
+                        </h1>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
+    {% endblock mi_header %}
+    
+    {% block index_contenido %}
+    {% endblock index_contenido %}
+
 {% endblock mi_contenido %}
 
 

@@ -1,10 +1,32 @@
-{% extends 'aplicacion/base.html' %}
+{% extends 'aplicacion/index.html' %}
 
-{% block mi_contenido %}
-<h2><a class="navbar-brand" href={% url 'index' %}>Index</a></h2>
-<p>Nuestros vecinos:</p>
-{% for vecino in vecinos %}
-    <li>{{vecino.nombre}} {{vecino.apellido}} cuya edad es {{vecino.edad}} y vive en el departamento {{vecino.departamento}}</li> 
-{% endfor %}
-{% endblock mi_contenido %}
+{% block title_pagina %}
+Ver nuestros vecinos
+{% endblock title_pagina %}
+
+{% block h1_texto_header %}
+Ver nuestros vecinos
+{% endblock h1_texto_header %}
+
+{% block index_contenido %}
+<h2><a class="navbar-brand" href={% url 'crear_vecino' %}>Formulario para vecinos</a></h2>
+<h5><p>Lista de vecinos:</p></h5>
+
+<form action={% url 'ver_vecinos' %} method= "GET">
+    {{formulario}}
+    <button>Buscar</button>
+</form>   
+<p>
+    {% if vecinos %}
+
+    {% for vecino in vecinos %}
+        <li>{{vecino.nombre}} {{vecino.apellido}} cuya edad es {{vecino.edad}} vive en el departamento {{vecino.departamento}}</li> 
+    {% endfor %}
+
+    {% else %}
+        <p>No se encontro su busqueda.</p>
+    {% endif %}
+
+</p>
+{% endblock index_contenido %}
 
