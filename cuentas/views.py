@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login
+from cuentas.forms import MiFormularioDeCreacion
 
 def inicio(request):
     
@@ -18,11 +19,11 @@ def inicio(request):
 def registrar(request):
     
     if request.method == 'POST':
-        formulario = UserCreationForm(request.POST)
+        formulario = MiFormularioDeCreacion(request.POST)
         if formulario.is_valid():
             formulario.save()
             return redirect('index') 
     else:
-        formulario = UserCreationForm()
+        formulario = MiFormularioDeCreacion()
     
     return render(request, 'cuentas/registrar.html', {'formulario': formulario})
