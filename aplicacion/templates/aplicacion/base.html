@@ -31,6 +31,7 @@
                     <a class="navbar-brand" href='#'>{{request.user.username}}</a> 
                 {% else %}
                     <a class="navbar-brand" href={% url 'inicio' %}>iniciar sesion</a> 
+                    <a class="navbar-brand" href={% url 'registrar' %}>registararse</a> 
                 {% endif %}
                 
                 
