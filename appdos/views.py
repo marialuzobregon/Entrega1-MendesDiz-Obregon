@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from appdos.models import Mascota
 from appdos.forms import MascotaFormulario
+from django.contrib.auth.decorators import login_required
 
 
 def ver_mascotas(request):
@@ -32,6 +33,7 @@ def crear_mascota(request):
     
     return render(request, 'appdos/crear_mascota.html', {'formulario': formulario})
 
+@login_required(login_url='/cuentas/iniciar/')
 def editar_mascota(request, id):
     
     mascota = Mascota.objects.get(id=id)
@@ -63,7 +65,9 @@ def editar_mascota(request, id):
  
     return render(request, 'appdos/editar_mascota.html', {'formulario': formulario, 'mascota': mascota})
 
+@login_required(login_url='/cuentas/iniciar/')
 def eliminar_mascota(request, id):
     mascota = Mascota.objects.get(id=id)
     mascota.delete()
     return redirect('ver_mascotas')
+

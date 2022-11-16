@@ -38,10 +38,12 @@ def ver_vecinos(request):
     else:
         vecinos = Vecino.objects.all()
     
-    formulario = BusquedaFormulario()
+        formulario = BusquedaFormulario()
     
     return render(request, 'aplicacion/ver_vecinos.html', {'vecinos': vecinos, 'formulario': formulario})
 
 def sobre_nosotros(request):
     
     return render (request, 'aplicacion/sobre_nosotros.html')
+
+

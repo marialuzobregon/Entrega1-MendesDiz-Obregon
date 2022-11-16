@@ -1,16 +1,16 @@
 {% extends 'aplicacion/base.html' %}
 
 {% block title_pagina %}
-<title>Iniciar sesion</title>
+<title>cambiar contrasenia</title>
 {% endblock title_pagina %}
 
 
 {% block mi_contenido %}
-<form action={% url 'inicio' %} method="POST">
+<form action={% url 'cambiar_contrasenia' %} method="POST">
     {% csrf_token %}
     <table>
-        {{formulario}}
+        {{form}}
     </table>
-    <button>Iniciar sesion</button>
+    <button>cambiar</button>
 </form>
 {% endblock mi_contenido %}
