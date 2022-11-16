@@ -15,18 +15,18 @@
         Imagen no cargada
         {% endif %}
         
-        nombre:  {{request.user.first_name}} <br>
+        Nombre:  {{request.user.first_name}} <br>
         </li>
         <li>
-            apellido:  {{request.user.last_name}} <br> 
+            Apellido:  {{request.user.last_name}} <br> 
         </li>
         <li>
-            email: {{request.user.first_name}} <br>
+            Email: {{request.user.first_name}} <br>
         </li>
     </h6>
 
     <p>
-    <a href={% url 'editar_perfil' %}>editar datos</a> <br>
-    <a href={% url 'cambiar_contrasenia' %}>cambiar contrasenia</a>
+    <a href={% url 'editar_perfil' %}>Editar datos</a> <br>
+    <a href={% url 'cambiar_contrasenia' %}>Cambiar contrasenia</a>
     </p>
 {% endblock mi_contenido %}
