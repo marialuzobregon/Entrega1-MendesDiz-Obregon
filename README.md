@@ -9,4 +9,5 @@
 9. Permite mostrarse el inicio de sesion visualizando datos y el avatar.
 10. Se permite cambiar el avatar
 
+El trabajo fue hecho por Maria luz Obregon y Felipe Mendes DiZ
 El trabajo en su totalidad fue hecho juntos. No nos dividimos tareas sino que trabajamos en todo momento juntos.
